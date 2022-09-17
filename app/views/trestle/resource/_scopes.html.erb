@@ -1,0 +1,18 @@
+<%= content_tag(:dl, class: admin.scopes.classes) do %>
+  <% admin.scopes.grouped.each do |group, scopes| %>
+    <%= content_tag(:dt, group, class: ["scope-group", ("scope-group-empty" if group.blank?)]) if admin.scopes.grouped? %>
+
+    <dd>
+      <ul class="scope-list">
+        <% scopes.each do |scope| %>
+          <li>
+            <%= link_to persistent_params.merge(scope: (scope unless scope.active?(params))), class: ["scope", ("active" if scope.active?(params))] do %>
+              <strong><%= scope.label %></strong>
+              (<%= number_with_delimiter(scope.count(admin.collection(params))) %>)
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </dd>
+  <% end %>
+<% end %>

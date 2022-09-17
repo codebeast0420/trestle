@@ -1,0 +1,19 @@
+<%= render "header", hide_breadcrumbs: local_assigns.fetch(:hide_breadcrumbs, false) if local_assigns.fetch(:header, true) %>
+
+<div class="main-content-area">
+  <%= render "trestle/flash/flash" %>
+  <%= render "utilities" %>
+  <%= render "tabs" %>
+
+  <% if local_assigns.fetch(:wrapper, true) %>
+    <%= container do |c| %>
+      <%= yield %>
+
+      <% c.sidebar do %>
+        <%= content_for(:sidebar) %>
+      <% end if content_for?(:sidebar) %>
+    <% end %>
+  <% else %>
+    <%= yield %>
+  <% end %>
+</div>

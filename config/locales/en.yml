@@ -1,0 +1,101 @@
+en:
+  trestle:
+    title: "Trestle Admin"
+    footer: "Powered by Trestle"
+    version: "Version"
+
+    helpers:
+      page_entries_info:
+        one_page:
+          display_entries:
+            zero: "No %{entry_name} found"
+            one: "Displaying <strong>1</strong> %{entry_name}"
+            other: "Displaying <strong>all %{count}</strong> %{entry_name}"
+
+        more_pages:
+          display_entries: "Displaying %{entry_name} <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <b>%{total}</b>"
+
+    onboarding:
+      welcome: "Welcome to Trestle"
+      no_admins: "To begin, please create an admin within <code>app/admin</code>."
+      no_template: "To customize this template, please create <code>%{path}</code>."
+      no_form: "Please define a form block or create a <code>_form.html</code> partial."
+
+    ui:
+      toggle_navigation: "Toggle navigation"
+      toggle_sidebar: "Toggle sidebar"
+      toggle_dropdown: "Toggle dropdown"
+
+    dialog:
+      error: "The request could not be completed."
+
+    confirmation:
+      title: "Are you sure?"
+      delete: "Delete"
+      cancel: "Cancel"
+
+    file:
+      choose_file: "Choose file..."
+      browse: "Browse"
+
+  admin:
+    titles:
+      index: "Listing %{pluralized_model_name}"
+      new: "New %{model_name}"
+      edit: "Editing %{model_name}"
+
+    buttons:
+      new: "New %{model_name}"
+      save: "Save %{model_name}"
+      delete: "Delete %{model_name}"
+      show: "Show %{model_name}"
+      edit: "Edit %{model_name}"
+      ok: "OK"
+
+    breadcrumbs:
+      home: "Home"
+
+    flash:
+      create:
+        success:
+          title: "Success!"
+          message: "The %{lowercase_model_name} was successfully created."
+
+        failure:
+          title: "Warning!"
+          message: "Please correct the errors below."
+
+      update:
+        success:
+          title: "Success!"
+          message: "The %{lowercase_model_name} was successfully updated."
+
+        failure:
+          title: "Warning!"
+          message: "Please correct the errors below."
+
+      destroy:
+        success:
+          title: "Success!"
+          message: "The %{lowercase_model_name} was successfully deleted."
+
+        failure:
+          title: "Warning!"
+          message: "Could not delete %{lowercase_model_name}."
+
+    table:
+      headers:
+        id: "ID"
+
+    form:
+      select:
+        prompt: "- Select %{attribute_name} -"
+
+    format:
+      blank: "None"
+
+    datepicker:
+      formats:
+        date: "m/d/Y"
+        datetime: "m/d/Y h:i K"
+        time: "h:i K"

@@ -1,0 +1,21 @@
+<% table = table.renderer(self) %>
+
+<div class="table-container">
+  <%= content_tag(:table, id: table.id, class: table.classes, data: table.data) do %>
+    <% if table.header? %>
+    <thead>
+      <tr>
+        <% table.columns.each do |column| %>
+          <%= content_tag(:th, column.header, class: column.classes, data: column.data) %>
+        <% end %>
+      </tr>
+    </thead>
+    <% end %>
+
+    <tbody>
+      <% collection.each do |instance| %>
+        <%= table.row.render(instance) %>
+      <% end %>
+    </tbody>
+  <% end %>
+</div>

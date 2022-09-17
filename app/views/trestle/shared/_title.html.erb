@@ -1,0 +1,14 @@
+<% if Trestle.config.site_logo %>
+  <% if Trestle.config.site_logo_small %>
+    <%= image_tag(Trestle.config.site_logo, class: "title-large", alt: Trestle.config.site_title) %>
+    <%= image_tag(Trestle.config.site_logo_small, class: "title-small", alt: Trestle.config.site_title) %>
+  <% else %>
+    <%= image_tag(Trestle.config.site_logo) %>
+  <% end %>
+<% elsif Trestle.config.site_logo_small %>
+  <%= image_tag(Trestle.config.site_logo_small, alt: "") %>
+  <span class="title-large"><%= Trestle.config.site_title %></span>
+<% else %>
+  <span class="title-large"><%= Trestle.config.site_title %></span>
+  <span class="title-small"><%= Trestle.config.site_title.split(/ /).map(&:first).first(3).join %></span>
+<% end %>

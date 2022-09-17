@@ -1,0 +1,42 @@
+Trestle.resource(:<%= admin_name %><% if module? %>, scope: <%= module_name %><% end %><% if singular? %>, singular: true<% end %>) do
+  menu do
+    item :<%= admin_name %>, icon: "fa fa-star"
+  end
+
+<%- if singular? -%>
+  instance do
+    # Override this block to define the instance that this resource represents.
+    raise NotImplementedError, "Singular resources must define an instance block."
+  end
+<%- else -%>
+  # Customize the table columns shown on the index view.
+  #
+  # table do
+  #   column :name
+  #   column :created_at, align: :center
+  #   actions
+  # end
+<%- end -%>
+
+  # Customize the form fields shown on the <% if singular? %>edit view<% else %>new/edit views<% end %>.
+  #
+  # form do |<%= parameter_name %>|
+  #   text_field :name
+  #
+  #   row do
+  #     col { datetime_field :updated_at }
+  #     col { datetime_field :created_at }
+  #   end
+  # end
+
+  # By default, all parameters passed to the <% if singular? %>update action<% else %>update and create actions<% end %> will be
+  # permitted. If you do not have full trust in your users, you should explicitly
+  # define the list of permitted parameters.
+  #
+  # For further information, see the Rails documentation on Strong Parameters:
+  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
+  #
+  # params do |params|
+  #   params.require(:<%= parameter_name %>).permit(:name, ...)
+  # end
+end
